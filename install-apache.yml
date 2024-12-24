@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  become: true
+
+  tasks:
+  - name: install apache
+    apt:
+      name: apache2
+      state: latest
+  - name: update pkg
+    apt:
+      update_cache: yes
+  - name: php for support of apache2
+    apt:
+      name: libapache2-mod-php
+      state: latest
