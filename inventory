@@ -1,2 +1,2 @@
-10.0.0.8
-10.0.0.6
+10.0.0.8 apache_pkg=apache2 php_pkg=libapache2-mod-php
+10.0.0.6 apache_pkg=apache2 php_pkg=libapache2-mod-php
