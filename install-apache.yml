@@ -8,10 +8,32 @@
     apt:
       name: apache2
       state: latest
+    when: ansible_distribution == "Ubuntu"
+
   - name: update pkg
     apt:
       update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
   - name: php for support of apache2
     apt:
       name: libapache2-mod-php
       state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install httpd
+    dnf:
+      name: httpd
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+  - name: update pkg
+    dnf:
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: php for support of httpd
+    dnf:
+      name: php
+      state: latest
+    when: ansible_distribution == "CentOS"
